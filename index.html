@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>20171013 | 关雎说</title>
+    <title>20171014 | 关雎说</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://use.typekit.net/ueu5sio.js"></script>
@@ -13,19 +14,24 @@
                 async: true
             });
         } catch (e) {}
+
     </script>
     <style>
         body {
-            background: #66BAB7;
+            background: #3A3226;
         }
+
     </style>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/js/date.js"></script>
+    <script src="assets/js/gjs.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $(".hidden").click(function() {
                 $(".hide").toggle("slow");
             });
         })
+
     </script>
     <script>
         var _hmt = _hmt || [];
@@ -35,6 +41,7 @@
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
+
     </script>
 </head>
 
@@ -42,31 +49,27 @@
     <div class="logo">关雎.说</div>
     <div class="container">
         <div class="quote">
-            <p class="text">哈哈哈哈看到这条微博好好笑啊</p>
-            <p class="text"><img src="http://ostfcwjy3.bkt.clouddn.com/17-10-13/57690844.jpg" /></p>
+            <p class="text">看空间看得心情复杂....</p>
             <div class="hidden">
-                <p class="hide">还有这个...<img src="http://ostfcwjy3.bkt.clouddn.com/17-10-13/7006560.jpg" /></p>
+                <p class="hide">还有听说楼楼病危了...想它😥<img src="http://ostfcwjy3.bkt.clouddn.com/17-10-14/95777850.jpg" /></p>
             </div>
-
-            <p class="meta"><i class="fa fa-calendar" aria-hidden="true"></i> 2017-10-13
+            <p id="meta" class="meta">
+                2017-10-14
             </p>
         </div>
-        <div class="controller">
+        <div class="controller" style="display: none;">
             <div class="prev">
-                <a href="#">
+                <a id="prev" href="#">
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
-
                 </a>
             </div>
-
             <div class="like">
                 <a href="#">
                     <i class="fa fa-heart-o" aria-hidden="true"></i>
                 </a>
             </div>
-
             <div class="next">
-                <a href="#">
+                <a id="next" href="#">
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                 </a>
             </div>
@@ -80,6 +83,24 @@
     <div style="display:none">
         <script src="https://s19.cnzz.com/z_stat.php?id=1264613551&web_id=1264613551" language="JavaScript"></script>
     </div>
+
+    <script src="assets/js/q.js"></script>
+    <script>
+        Q.reg('latest', function() {
+            console.log('打开了首页');
+            initPage(getDay(0));
+        });
+
+        Q.reg(/^(\d{4})-(\d{2})-(\d{2})$/, function(yyyy, mm, dd) {
+            initPage(yyyy, mm, dd);
+        })
+
+        Q.init({
+            key: '!/',
+            index: 'latest' /* 首页地址 */
+        });
+
+    </script>
 </body>
 
 </html>
