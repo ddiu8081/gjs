@@ -10,6 +10,7 @@ body {
     max-height: 100%;
     color: #fff;
     background-color: #E16B8C;
+    transition: all 0.3s ease;
 }
 
 a {
@@ -26,7 +27,7 @@ a {
 
 .quote {
     position: relative;
-    margin: 7rem 0 0;
+    margin: 5rem 0 0;
     color: #fff;
     line-height: 1.6;
     font-size: 3.6rem;
@@ -49,24 +50,25 @@ a {
 
 .quote .hidden {
     padding: 0.2rem 1rem;
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: rgba(255, 255, 255, 0.04);
     border-radius: 1rem;
     color: rgba(255, 255, 255, 0.7);
+    min-height: 4.8rem;
+    transition: all 0.3s ease;
+}
+
+.quote .hidden:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    min-height: 5.4rem;
 }
 
 .quote .hide {
-    transition: all 0.3s ease;
-    border-radius: 1rem;
-    opacity: 0;
-}
-
-.quote .hide:hover {
-    visibility: visible;
-    opacity: 1;
+    display: none;
 }
 
 .quote img {
     width: 100%;
+    margin: 0.5rem 0;
 }
 
 .quote .meta {
@@ -78,6 +80,47 @@ a {
 
 .quote .meta:hover {
     color: rgba(255, 255, 255, 0.6);
+}
+
+.controller {
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex;
+    font-size: 4rem;
+    margin: 2rem 2rem 5rem;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.controller:hover {
+    opacity: 0.8;
+}
+
+.controller div {
+    position: relative;
+}
+
+.controller a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.controller a:hover {
+    color: #fff;
+}
+
+.controller .prev {
+    width: 40%;
+    text-align: left;
+}
+
+.controller .like {
+    width: 20%;
+    text-align: center;
+}
+
+.controller .next {
+    width: 40%;
+    text-align: right;
 }
 
 .footer {
