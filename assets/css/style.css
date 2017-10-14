@@ -10,7 +10,7 @@ body {
     max-height: 100%;
     color: #fff;
     background-color: #E16B8C;
-    transition: all 0.3s ease;
+    transition: all 3s ease;
 }
 
 a {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>20171014 | 关雎说</title>
+    <title>关雎说 | gjs</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://use.typekit.net/ueu5sio.js"></script>
@@ -16,12 +16,6 @@
         } catch (e) {}
 
     </script>
-    <style>
-        body {
-            background: #3A3226;
-        }
-
-    </style>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/js/date.js"></script>
     <script src="assets/js/gjs.js"></script>
@@ -49,12 +43,16 @@
     <div class="logo">关雎.说</div>
     <div class="container">
         <div class="quote">
-            <p class="text">看空间看得心情复杂....</p>
+            <p id="message_text" class="text">gjs | 每日份的小礼物</p>
+            <img id="message_pic" src="" />
             <div class="hidden">
-                <p class="hide">还有听说楼楼病危了...想它😥<img src="http://ostfcwjy3.bkt.clouddn.com/17-10-14/95777850.jpg" /></p>
+                <div class="hide">
+                    <p id="hidden_text">= v =</p>
+                    <img id="hidden_pic" src="" />
+                </div>
             </div>
             <p id="meta" class="meta">
-                2017-10-14
+                ——某爱狗人士
             </p>
         </div>
         <div class="controller" style="display: none;">
@@ -92,7 +90,7 @@
         });
 
         Q.reg(/^(\d{4})-(\d{2})-(\d{2})$/, function(yyyy, mm, dd) {
-            initPage(yyyy, mm, dd);
+            initPage(yyyy + '-' + mm + '-' + dd);
         })
 
         Q.init({
