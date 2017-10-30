@@ -26,16 +26,14 @@ var initPage = function (date) {
         if (data.prev) {
             $('#prev').show();
             $('#prev').attr("href", '#!/' + data.prev);
-        }
-        else {
+        } else {
             $('#prev').hide();
         }
 
         if (data.next) {
             $('#next').show();
             $('#next').attr("href", '#!/' + data.next);
-        }
-        else {
+        } else {
             $('#next').hide();
         }
 
@@ -67,6 +65,14 @@ var initPage = function (date) {
             $('#hidden_pic').hide("slow");
         }
 
+        if (data.hidden_a_href) {
+            $('#hidden_a').show("slow");
+            $('#hidden_a').text(data.hidden_a_text);
+            $('#hidden_a').attr('href', data.hidden_a_href);
+        } else {
+            $('#hidden_a').hide("slow");
+        }
+
         if (data.like == '0') {
             $('#like_icon').attr('class', 'fa fa-heart-o');
         } else {
@@ -75,6 +81,7 @@ var initPage = function (date) {
 
     });
 }
+
 var likeMessege = function (date) {
     $.getJSON("api.php?f=like&date=" + date, function (data) {
         console.log(data);
@@ -83,6 +90,57 @@ var likeMessege = function (date) {
         } else {
             $('#like_icon').attr('class', 'fa fa-heart');
         }
+    });
+}
+
+var playMusic = function (musicID) {
+    var musicUrl = 'http://music.163.com/api/132434.mp3';
+    var musicUrl = 'http://'
+}
+
+var c171019 = function () {
+    /* 鼠标点击特效 */
+    $("body").click(function (e) {
+        var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善", "富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善", "小葛最萌了= v =");
+        var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+            y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "#fff",
+            "font-size": "2rem"
+        });
+        $("body").append($i);
+        $i.animate({
+                "top": y - 180,
+                "opacity": 0
+            },
+            1500,
+            function () {
+                $i.remove();
+            });
+    });
+}
+
+var c171031 = function () {
+    /* 万圣节特效 */
+    $(".hidden").unbind();
+    $(".hidden").click(function() {
+        $(".hide").show("fast");
+        setTimeout(function() {
+            $(".hide").hide("fast");
+        }, 1000);
+
+    });
+    $("body").css(
+        "background","url(./001.gif)"
+    );
+    $("body").click(function (e) {
 
     });
 }
