@@ -27,6 +27,7 @@ var initPage = function (date) {
             $('#prev').attr("href", '#!/' + data.prev);
         } else {
             $('#prev').hide();
+            $('')
         }
 
         if (data.next) {
@@ -48,6 +49,13 @@ var initPage = function (date) {
             $('#message_pic').attr('src', data.message_pic);
         } else {
             $('#message_pic').hide("slow");
+        }
+
+        if (data.video_aid) {
+            $('#video').attr('src', "//www.bilibili.com/blackboard/player.html?aid=" + data.video_aid);
+            $('#video').show("slow");
+        } else {
+            $('#video').hide("slow");
         }
 
         if (data.hidden_text || data.hidden_pic || data.hidden_a_href) {
@@ -104,7 +112,7 @@ var likeMessege = function (date) {
 }
 
 var playMusic = function (musicID) {
-    var musicUrl = 'http://music.163.com/api/132434.mp3';
+    var music = new Audio();
 }
 
 var c171019 = function () {

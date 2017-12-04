@@ -76,6 +76,10 @@ a:hover {
     margin: 0.5rem 0;
 }
 
+.quote #video {
+    display: none;
+}
+
 .quote .meta {
     text-align: right;
     color: rgba(255, 255, 255, 0.35);
