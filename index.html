@@ -60,7 +60,7 @@
                 </div>
             </div>
             <p id="meta" class="meta">
-                ——某爱葛人士
+                ——Diu
             </p>
         </div>
         <div id="controller" class="controller">
@@ -98,12 +98,6 @@
 
         Q.reg(/^(\d{4})-(\d{2})-(\d{2})$/, function(yyyy, mm, dd) {
             initPage(yyyy + '-' + mm + '-' + dd);
-            if (dd == '19' && mm == '10' && yyyy == '2017') {
-                c171019();
-            }
-            else if (dd == '31' && mm == '10' && yyyy == '2017') {
-                c171031();
-            }
             else {
                 $("body").unbind();
                 $("body").css("background-image","none");
