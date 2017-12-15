@@ -12,5 +12,8 @@ Gjs is a birthday gift for gjs.
 * 后台发布（暂未实现）
 * ...
 
+# 参考链接
+[gjs](http://ddiu.pw/gjs-e)
+
 # 截图
 ![Screenshot](http://ostfcwjy3.bkt.clouddn.com/17-10-10/41204029.jpg)

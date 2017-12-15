@@ -30,15 +30,6 @@
             });
         })
     </script>
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?831c7ab6d156b15d30038a7d09d1a46d";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
 </head>
 
 <body>
@@ -98,14 +89,6 @@
 
         Q.reg(/^(\d{4})-(\d{2})-(\d{2})$/, function(yyyy, mm, dd) {
             initPage(yyyy + '-' + mm + '-' + dd);
-            else {
-                $("body").unbind();
-                $("body").css("background-image","none");
-                $(".hidden").unbind();
-                $(".hidden").click(function() {
-                    $(".hide").toggle("slow");
-                });
-            }
         });
 
         Q.init({
