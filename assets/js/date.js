@@ -24,3 +24,19 @@ var getDay = function (dayCount) {
 
     return thisDate;
 }
+
+var ChineseDay = function (str) {
+    var paras = str.split("-",3)
+    var day = paras[2]
+    var month = paras[1] - 1
+    var Dcharacters = ["","一","二","三","四","五","六","七","八","九","十"]
+    var Mcharacters = ["","十","二十","三十"]
+
+    var ZdataM = Mcharacters[Math.floor(month/10)]+Dcharacters[month % 10+1]
+
+    var ZdataD = Mcharacters[Math.floor(day/10)]+Dcharacters[day % 10]
+
+    var thisDate = ZdataM + "月" + ZdataD + "日";
+
+    return thisDate;
+}

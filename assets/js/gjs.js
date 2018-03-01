@@ -1,25 +1,31 @@
 var initPage = function (date) {
-    $(".hide").hide("slow");
+    $("#hide_div").hide();
 
     if (date.length == 0) {
         date = getDay(0);
     }
 
-    $("body").css("background-color", '#E16B8C');
     $('#message_text').hide("slow");
     $('#message_pic').hide("slow");
+    $('#hidden_button').hide();
     $('#hide_div').hide("slow");
-    $('#meta').text("不存在的");
+    $('.date').hide("fast");
 
     $.getJSON("api.php?f=getMessege&date=" + date, function (data) {
         console.log(data);
 
+        if (data.id) {
+            $('.container').addClass('bounceIn');
+            $('.vol').text("#" + data.id);
+        }
+
         if (data.color.length != 0) {
-            $("body").css("background-color", data.color);
+            $(".circle").css("background-color", data.color);
         }
 
         if (data.date) {
-            $('#meta').text(data.date);
+            $('.date').text(ChineseDay(data.date));
+            $('.date').show("slow");
         }
 
         if (data.prev) {
@@ -51,16 +57,15 @@ var initPage = function (date) {
             $('#message_pic').hide("slow");
         }
 
-        if (data.video_aid) {
-            $('#video').attr('src', "//www.bilibili.com/blackboard/player.html?aid=" + data.video_aid);
-            $('#video').show("slow");
-        } else {
-            $('#video').hide("slow");
-        }
+//        if (data.video_aid) {
+//            $('#video').attr('src', "//www.bilibili.com/blackboard/player.html?aid=" + data.video_aid);
+//            $('#video').show("slow");
+//        } else {
+//            $('#video').hide("slow");
+//        }
 
         if (data.hidden_text || data.hidden_pic || data.hidden_a_href) {
-            console.log('show!');
-            $('#hide_div').show("slow");
+            $('#hidden_button').show();
             if (data.hidden_text) {
                 $('#hidden_text').show();
                 $('#hidden_text').text(data.hidden_text);
@@ -84,32 +89,28 @@ var initPage = function (date) {
             }
         }
         else {
-            $('#hidden_text').hide();
-            $('#hidden_pic').hide();
-            $('#hidden_a').hide();
-            $('#hide_div').hide();
-            console.log('hide!');
+            $('#hidden_button').hide();
         }
 
-        if (data.like == '0') {
-            $('#like_icon').attr('class', 'fa fa-heart-o');
-        } else {
-            $('#like_icon').attr('class', 'fa fa-heart');
-        }
+//        if (data.like == '0') {
+//            $('#like_icon').attr('class', 'fa fa-heart-o');
+//        } else {
+//            $('#like_icon').attr('class', 'fa fa-heart');
+//        }
 
     });
 }
 
-var likeMessege = function (date) {
-    $.getJSON("api.php?f=like&date=" + date, function (data) {
-        console.log(data);
-        if (data.like == '0') {
-            $('#like_icon').attr('class', 'fa fa-heart-o');
-        } else {
-            $('#like_icon').attr('class', 'fa fa-heart');
-        }
-    });
-}
+//var likeMessege = function (date) {
+//    $.getJSON("api.php?f=like&date=" + date, function (data) {
+//        console.log(data);
+//        if (data.like == '0') {
+//            $('#like_icon').attr('class', 'fa fa-heart-o');
+//        } else {
+//            $('#like_icon').attr('class', 'fa fa-heart');
+//        }
+//    });
+//}
 
 var playMusic = function (musicID) {
     var music = new Audio();
