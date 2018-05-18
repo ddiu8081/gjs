@@ -92,6 +92,10 @@ var initPage = function (date) {
             $('#hidden_button').hide();
         }
 
+        $(".meta").click(function() {
+            $('.date').text(data.update_date);
+        });
+
 //        if (data.like == '0') {
 //            $('#like_icon').attr('class', 'fa fa-heart-o');
 //        } else {
