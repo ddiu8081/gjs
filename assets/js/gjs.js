@@ -93,7 +93,7 @@ var initPage = function (date) {
         }
 
         $(".meta").click(function() {
-            $('.date').text(data.update_date);
+            $('.date').text("更新时间：" + data.update_date);
         });
 
 //        if (data.like == '0') {
